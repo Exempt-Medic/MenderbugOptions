@@ -8,7 +8,7 @@ namespace MenderbugOptions
 
     public static class ModMenu
     {
-        private static Menu MenuRef;
+        private static Menu? MenuRef;
         public static MenuScreen CreateModMenu(MenuScreen modlistmenu)
         {
             MenuRef ??= new Menu("Menderbug Options", new Element[]
@@ -51,7 +51,7 @@ namespace MenderbugOptions
                 submitAction =>
                 {
                     MenderbugOptionsMod.globalSettings.MenderbugSpawnChance = 50;
-                    MenuRef.Update();
+                    MenuRef?.Update();
                 }),
 
             new MenuButton(
@@ -62,7 +62,7 @@ namespace MenderbugOptions
                     MenderbugOptionsMod.globalSettings.MenderbugIgnoresSign = false;
                     MenderbugOptionsMod.globalSettings.MenderbugNeverDies = false;
                     MenderbugOptionsMod.globalSettings.MenderbugSpawnChance = 2;
-                    MenuRef.Update();
+                    MenuRef?.Update();
                 })
             });
 
